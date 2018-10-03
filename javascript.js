@@ -1,8 +1,8 @@
         $(document).ready(function() {
             var myurl = 'https://newsapi.org/v2/top-headlines?' +
             'sources=the-new-york-times,the-huffington-post,the-washington-post&' +
-          'apiKey=84016fc1a1fb4b57b4d8e7950645ee27';
-          console.log(myurl);
+            'apiKey=84016fc1a1fb4b57b4d8e7950645ee27';
+            console.log(myurl);
             $.ajax({
             url : myurl,
             dataType : "json",
@@ -19,7 +19,7 @@
                     articleURL = parsed_json['articles'][i]['url'];
                     console.log(title);
                     console.log(i);
-                    everything += "<li><h3><a href=\"" + articleURL + "\">" + title + "</a></h3>";
+                    everything += "<li><h3><a href=\"" + articleURL + "\" target=\"_blank\">" + title + "</a></h3>";
                     everything += "<p>" + sourceName + "</p></li>"
                 }
                 $("#leftNewsList").html(everything);

@@ -1,3 +1,7 @@
 #headBar {
     background-color: #7100B7;
 }
+
+ul {
+    list-style: none;
+}
