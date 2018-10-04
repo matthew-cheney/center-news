@@ -1,4 +1,4 @@
-function leftNews() {
+$(document).ready(function() {
     var myurlLeft = 'https://newsapi.org/v2/top-headlines?' +
         'sources=the-new-york-times,the-huffington-post&' +
         'apiKey=84016fc1a1fb4b57b4d8e7950645ee27';
@@ -13,23 +13,33 @@ function leftNews() {
             var sourceName;
             var articleURL;
             var date;
+            var imageURL;
+            var imageAdded = 0;
             var everything = "";
             var i;
             for (i = 0; i < parsed_json['articles']['length']; i++) {
                 title = parsed_json['articles'][i]['title'];
                 sourceName = parsed_json['articles'][i]['source']['name'];
+                imageURL = parsed_json['articles'][i]['urlToImage'];
                 articleURL = parsed_json['articles'][i]['url'];
-                date = parsed_json['articles'][i]['publishedAt'].substring(0,10);
-                everything += "<li><h3><a href=\"" + articleURL + "\" target=\"_blank\">" + title + "</a></h3>";
+                date = parsed_json['articles'][i]['publishedAt'].substring(0, 10);
+                if (imageURL == null) {
+                    everything += "<li>";
+                }
+                else {
+                    everything += "<li><img class=\"thumbnail\" src=\"" + imageURL + "\">";
+                    if (imageAdded == 0) {
+                        $("#image1").attr("src", imageURL);
+                        imageAdded = 1;
+                    }
+                }
+                everything += "<h3><a href=\"" + articleURL + "\" target=\"_blank\">" + title + "</a></h3>";
                 everything += "<p>" + sourceName + " - " + date + "</p></li>"
             }
             $("#leftNewsList").html(everything);
         }
     });
 
-}
-
-function centerNews() {
     var myurlCenter = 'https://newsapi.org/v2/top-headlines?' +
         'sources=the-wall-street-journal,cbs-news,google-news&' +
         'apiKey=84016fc1a1fb4b57b4d8e7950645ee27';
@@ -44,22 +54,32 @@ function centerNews() {
             var sourceName;
             var articleURL;
             var date;
+            var imageAdded = 0;
             var everything = "";
             var i;
             for (i = 0; i < parsed_json['articles']['length']; i++) {
                 title = parsed_json['articles'][i]['title'];
                 sourceName = parsed_json['articles'][i]['source']['name'];
                 articleURL = parsed_json['articles'][i]['url'];
-                date = parsed_json['articles'][i]['publishedAt'].substring(0,10);
-                everything += "<li><h3><a href=\"" + articleURL + "\" target=\"_blank\">" + title + "</a></h3>";
+                imageURL = parsed_json['articles'][i]['urlToImage'];
+                date = parsed_json['articles'][i]['publishedAt'].substring(0, 10);
+                if (imageURL == null) {
+                    everything += "<li>";
+                }
+                else {
+                    everything += "<li><img class=\"thumbnail\" src=\"" + imageURL + "\">";
+                    if (imageAdded == 0) {
+                        $("#image2").attr("src", imageURL);
+                        imageAdded = 1;
+                    }
+
+                }
+                everything += "<h3><a href=\"" + articleURL + "\" target=\"_blank\">" + title + "</a></h3>";
                 everything += "<p>" + sourceName + " - " + date + "</p></li>"
             }
             $("#centerNewsList").html(everything);
         }
     });
-}
-
-function rightNews() {
     var myurlRight = 'https://newsapi.org/v2/top-headlines?' +
         'sources=fox-news,the-washington-times&' +
         'apiKey=84016fc1a1fb4b57b4d8e7950645ee27';
@@ -74,22 +94,36 @@ function rightNews() {
             var sourceName;
             var articleURL;
             var date;
+            var imageAdded = 0;
             var everything = "";
             var i;
             for (i = 0; i < parsed_json['articles']['length']; i++) {
                 title = parsed_json['articles'][i]['title'];
                 sourceName = parsed_json['articles'][i]['source']['name'];
                 articleURL = parsed_json['articles'][i]['url'];
-                date = parsed_json['articles'][i]['publishedAt'].substring(0,10);
-                everything += "<li><h3><a href=\"" + articleURL + "\" target=\"_blank\">" + title + "</a></h3>";
+                imageURL = parsed_json['articles'][i]['urlToImage'];
+                date = parsed_json['articles'][i]['publishedAt'].substring(0, 10);
+                if (imageURL == null) {
+                    everything += "<li>";
+                }
+                else {
+                    everything += "<li><img class=\"thumbnail\" src=\"" + imageURL + "\">";
+                    if (imageAdded == 0) {
+                        $("#image3").attr("src", imageURL);
+                        imageAdded = 1;
+                    }
+
+                }
+                everything += "<h3><a href=\"" + articleURL + "\" target=\"_blank\">" + title + "</a></h3>";
                 everything += "<p>" + sourceName + " - " + date + "</p></li>"
             }
             $("#rightNewsList").html(everything);
+
+
         }
     });
-}
-$(document).ready(function() {
-    leftNews();
-    centerNews();
-    rightNews();
+
+
+
+    console.log("done");
 });

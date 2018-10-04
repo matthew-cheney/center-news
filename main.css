@@ -1,3 +1,7 @@
+body {
+    overflow-x: hidden;
+}
+
 #headBar {
     background-color: #7100B7;
 }
@@ -5,4 +9,90 @@
 ul {
     list-style: none;
 }
- 
+
+#leftNewsCol {
+    background-color: #A3CEFE;
+    background-size: cover;
+}
+
+#centerNewsCol {
+    background-color: white;
+    background-size: cover;
+}
+
+#rightNewsCol {
+    background-color: #FE7E7E;
+    background-size: cover;
+}
+
+div {
+    font-family: Raleway;
+    font-size: 1rem;
+    letter-spacing: 5px;
+    padding-top: 5px;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+#leftImage {
+    width: 30%;
+}
+
+#centerImage {
+    width: 30%;
+}
+
+#rightImage {
+    width: 30%;
+}
+
+.thumbnail {
+    width: 100%;
+}
+
+div #headPhoto {
+    /*background-image: url("images/01.jpg");*/
+    background-size: cover;
+    height: 570px;
+    background-color: blue;
+}
+
+#myCarousel {
+    overflow: hidden;
+}
+
+.carouselImg {
+    margin: 0 auto;
+    height: 500px;
+}
+
+.carousel .item {
+    height: 260px;
+}
+
+.carousel-control {
+    background-image: none !important;
+    filter: none !important;
+    progid: none !important;
+    -o-transition: .5s;
+    -ms-transition: .5s;
+    -moz-transition: .5s;
+    -webkit-transition: .5s;
+    top: 50%;
+    bottom: 50%;
+
+}
+
+.carousel-control.right,
+.carousel-control.left {
+    background-image: none;
+    position: fixed;
+
+}
+
+
+.carousel-inner>.item {
+    /*disables white flash*/
+    -webkit-transition: -webkit-transform .5s ease-in-out;
+    -o-transition: -o-transform .5s ease-in-out;
+    transition: transform .5s ease-in-out;
+}
