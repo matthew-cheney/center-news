@@ -17,25 +17,27 @@ $(document).ready(function() {
             var imageAdded = 0;
             var everything = "";
             var i;
-            for (i = 0; i < parsed_json['articles']['length']; i++) {
+            for (i = 0; i < 15; i++) {
                 title = parsed_json['articles'][i]['title'];
                 sourceName = parsed_json['articles'][i]['source']['name'];
                 imageURL = parsed_json['articles'][i]['urlToImage'];
                 articleURL = parsed_json['articles'][i]['url'];
                 date = parsed_json['articles'][i]['publishedAt'].substring(0, 10);
                 if (imageURL == null) {
-                    everything += "<li>";
+                    everything += "<li><a href=\"" + articleURL + "\" target=\"_blank\">";
                 }
                 else {
-                    everything += "<li><img class=\"thumbnail\" src=\"" + imageURL + "\">";
+                    everything += "<li><a href=\"" + articleURL + "\" target=\"_blank\"><img class=\"thumbnail\" src=\"" + imageURL + "\">";
                     if (imageAdded == 0) {
                         //$("#image1text").html(title);
                         $("#image1").attr("src", imageURL);
+                        $("#link1").attr("href", articleURL);
+                        $("#span1").html(title);
                         imageAdded = 1;
                     }
                 }
-                everything += "<h3><a href=\"" + articleURL + "\" target=\"_blank\">" + title + "</a></h3>";
-                everything += "<p>" + sourceName + " - " + date + "</p><hr></li>"
+                everything += "<h3>" + title + "</h3>";
+                everything += "<p>" + sourceName + " - " + date + "</p><hr></a></li>"
             }
             $("#leftNewsList").html(everything);
         }
@@ -58,25 +60,27 @@ $(document).ready(function() {
             var imageAdded = 0;
             var everything = "";
             var i;
-            for (i = 0; i < parsed_json['articles']['length']; i++) {
+            for (i = 0; i < 15; i++) {
                 title = parsed_json['articles'][i]['title'];
                 sourceName = parsed_json['articles'][i]['source']['name'];
                 articleURL = parsed_json['articles'][i]['url'];
                 imageURL = parsed_json['articles'][i]['urlToImage'];
                 date = parsed_json['articles'][i]['publishedAt'].substring(0, 10);
                 if (imageURL == null) {
-                    everything += "<li>";
+                    everything += "<li><a href=\"" + articleURL + "\" target=\"_blank\">";
                 }
                 else {
-                    everything += "<li><img class=\"thumbnail\" src=\"" + imageURL + "\">";
+                    everything += "<li><a href=\"" + articleURL + "\" target=\"_blank\"><img class=\"thumbnail\" src=\"" + imageURL + "\">";
                     if (imageAdded == 0) {
                         $("#image2").attr("src", imageURL);
+                        $("#link2").attr("href", articleURL);
+                        $("#span2").html(title);
                         imageAdded = 1;
                     }
 
                 }
-                everything += "<h3><a href=\"" + articleURL + "\" target=\"_blank\">" + title + "</a></h3>";
-                everything += "<p>" + sourceName + " - " + date + "</p><hr></li>"
+                everything += "<h3>" + title + "</h3>";
+                everything += "<p>" + sourceName + " - " + date + "</p><hr></a></li>"
             }
             $("#centerNewsList").html(everything);
         }
@@ -98,25 +102,27 @@ $(document).ready(function() {
             var imageAdded = 0;
             var everything = "";
             var i;
-            for (i = 0; i < parsed_json['articles']['length']; i++) {
+            for (i = 0; i < 15; i++) {
                 title = parsed_json['articles'][i]['title'];
                 sourceName = parsed_json['articles'][i]['source']['name'];
                 articleURL = parsed_json['articles'][i]['url'];
                 imageURL = parsed_json['articles'][i]['urlToImage'];
                 date = parsed_json['articles'][i]['publishedAt'].substring(0, 10);
                 if (imageURL == null) {
-                    everything += "<li>";
+                    everything += "<li><a href=\"" + articleURL + "\" target=\"_blank\">";
                 }
                 else {
-                    everything += "<li><img class=\"thumbnail\" src=\"" + imageURL + "\">";
+                    everything += "<li><a href=\"" + articleURL + "\" target=\"_blank\"><img class=\"thumbnail\" src=\"" + imageURL + "\">";
                     if (imageAdded == 0) {
                         $("#image3").attr("src", imageURL);
+                        $("#link3").attr("href", articleURL);
+                        $("#span3").html(title);
                         imageAdded = 1;
                     }
 
                 }
-                everything += "<h3><a href=\"" + articleURL + "\" target=\"_blank\">" + title + "</a></h3>";
-                everything += "<p>" + sourceName + " - " + date + "</p><hr></li>"
+                everything += "<h3>" + title + "</h3>";
+                everything += "<p>" + sourceName + " - " + date + "</p><hr></a></li>"
             }
             $("#rightNewsList").html(everything);
 

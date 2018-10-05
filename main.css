@@ -3,11 +3,15 @@ body {
 }
 
 #headBar {
-    background-color: #7100B7;
+    background-color: rgba(0,0,0,0.8);
 }
 
 ul {
     list-style: none;
+}
+
+li {
+    height: 600px;
 }
 
 #leftNewsCol {
@@ -53,22 +57,44 @@ div #headPhoto {
     /*background-image: url("images/01.jpg");*/
     background-size: cover;
     height: 570px;
-    background-color: blue;
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.carSpan {
+    padding: 20px;
+    font-size: 1.5rem;
+    font-family: Arial;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+a:link {
+    color: rgba(0,0,0,.8);
+}
+a:visited {
+    color: rgba(0,0,0,.3);
+}
+a:hover {
+    color: rgba(0,0,0,.6)!important;
+    text-decoration: none!important;
 }
 
 #myCarousel {
     overflow: hidden;
 }
 
+.spanDiv {
+    max-width: 900px;
+}
+
+
 
 .carouselImg {
     margin: 0 auto;
-    height: 500px;
+    height: 400px;
 }
 
-.carousel .item {
-    height: 260px;
-}
+
+.carousel .item {}
 
 .carousel-control {
     background-image: none !important;
