@@ -29,12 +29,13 @@ $(document).ready(function() {
                 else {
                     everything += "<li><img class=\"thumbnail\" src=\"" + imageURL + "\">";
                     if (imageAdded == 0) {
+                        //$("#image1text").html(title);
                         $("#image1").attr("src", imageURL);
                         imageAdded = 1;
                     }
                 }
                 everything += "<h3><a href=\"" + articleURL + "\" target=\"_blank\">" + title + "</a></h3>";
-                everything += "<p>" + sourceName + " - " + date + "</p></li>"
+                everything += "<p>" + sourceName + " - " + date + "</p><hr></li>"
             }
             $("#leftNewsList").html(everything);
         }
@@ -75,7 +76,7 @@ $(document).ready(function() {
 
                 }
                 everything += "<h3><a href=\"" + articleURL + "\" target=\"_blank\">" + title + "</a></h3>";
-                everything += "<p>" + sourceName + " - " + date + "</p></li>"
+                everything += "<p>" + sourceName + " - " + date + "</p><hr></li>"
             }
             $("#centerNewsList").html(everything);
         }
@@ -115,7 +116,7 @@ $(document).ready(function() {
 
                 }
                 everything += "<h3><a href=\"" + articleURL + "\" target=\"_blank\">" + title + "</a></h3>";
-                everything += "<p>" + sourceName + " - " + date + "</p></li>"
+                everything += "<p>" + sourceName + " - " + date + "</p><hr></li>"
             }
             $("#rightNewsList").html(everything);
 
