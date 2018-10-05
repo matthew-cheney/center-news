@@ -132,7 +132,7 @@ function loadNews(query) {
     else {
         myurlRight += 'top-headlines?';
     }
-    myurlRight += 'sources=fox-news,the-washington-times&sortBy=publishedAt&' +
+    myurlRight += 'sources=fox-news,the-washington-times,national-review&sortBy=publishedAt&' +
         'apiKey=84016fc1a1fb4b57b4d8e7950645ee27';
     console.log(myurlRight);
     $.ajax({
